@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <style>
+    html, body {
+    	background-color: rgb(15,15,15);
+    	margin: 0px;
+    	font-family: sans-serif;
+    }
+    div#root {
+      overflow: hidden;
+      width: 100vw;
+      height: 100vh;
+      position: absolute;
+    }
+
+    div.tooltip {
+        position: absolute;
+        text-align: left;
+        /*width: 60px;*/
+        /*height: 28px;*/
+        padding: 5px;
+        font: 12px sans-serif;
+        background: white;
+        border: 0px;
+        border-radius: 4px;
+        pointer-events: none;
+        max-width: 400px;
+    }
+
+    svg circle.active {
+      stroke-width: 2;
+      stroke: white;
+    }
+    </style>
+    <title>Emails</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  <script type="text/javascript" src="bundle.js"></script></body>
+</html>
