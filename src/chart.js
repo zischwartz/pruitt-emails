@@ -55,10 +55,9 @@ function chart(data, el){
 
   dots.enter().append("circle")
   .attr("class", "dot")
-  .style("fill-opacity", 0.6) // .style("fill-opacity", 0)
-  .attr("r", 0)
-  .transition().duration(1000)
+  .style("fill-opacity", 0) // .style("fill-opacity", 0)
   .attr("r", function(d){return radius_scale(d[3].length)})
+  .transition().duration(1000)
   .style("fill-opacity", 0.6)
   .attr("cx", function(d) { return x(d[0]); })
   .attr("cy", function(d) { return y(d[1]); })
