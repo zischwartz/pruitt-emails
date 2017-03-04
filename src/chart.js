@@ -55,13 +55,15 @@ function chart(data, el){
 
   dots.enter().append("circle")
   .attr("class", "dot")
-  .style("fill-opacity", 0) // .style("fill-opacity", 0)
+  .style("fill-opacity", 0)
   .attr("r", function(d){return radius_scale(d[3].length)})
-  .transition().duration(1000)
-  .style("fill-opacity", 0.6)
   .attr("cx", function(d) { return x(d[0]); })
   .attr("cy", function(d) { return y(d[1]); })
   .style("fill", function(d) { return color(d[2]); })
+
+  dots.transition().duration(250)
+    .delay(function(d, i) { return i/2 })
+    .style("fill-opacity", 0.7)
 
   dots.on("mouseover", function(d) {
       d3.select(this).classed('active', true)
