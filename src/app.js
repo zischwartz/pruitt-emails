@@ -3,7 +3,7 @@ import React from 'react'
 import chart from './chart.js'
 const email_data = require("json-loader!../email_plot_data_3.json")
 
-console.log(email_data.email_lines.length)
+// console.log(email_data.email_lines.length)
 
 class App extends React.Component {
   constructor(props){
