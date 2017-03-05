@@ -1,1 +1,1 @@
-Source: https://archive.org/details/ScottPruittEmails
+This is a visualization of EPA head [Scott Pruitt](https://en.wikipedia.org/wiki/Scott_Pruitt)'s recently released [emails](https://archive.org/details/ScottPruittEmails) from his last job as OK AG. Position and color are based on [tf-idf](https://en.wikipedia.org/wiki/Tf%E2%80%93idf) and [t-SNE](https://en.wikipedia.org/wiki/T-distributed_stochastic_neighbor_embedding). More [info here](https://github.com/zischwartz/pruitt-emails/blob/master/text.ipynb).

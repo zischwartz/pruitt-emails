@@ -26,10 +26,10 @@ class App extends React.Component {
     this.setState({show_info:!this.state.show_info})
   }
   getInfo(){
-    return <div id="info-content">This is where some info should go</div>
+    return <div id="info-content"><p>This is a visualization of EPA head <a href="https://en.wikipedia.org/wiki/Scott_Pruitt">Scott Pruitt</a>&#8217;s recently released <a href="https://archive.org/details/ScottPruittEmails">emails</a> from his last job as OK AG. Position and color are based on <a href="https://en.wikipedia.org/wiki/Tf%E2%80%93idf">tf-idf</a> and <a href="https://en.wikipedia.org/wiki/T-distributed_stochastic_neighbor_embedding">t-SNE</a>. More <a href="https://github.com/zischwartz/pruitt-emails/blob/master/text.ipynb">info here</a>.</p> </div>
   }
   render(){
-    let loading = this.state.done_loading ? '' : <div id="loading-indicator"><h2>Loading...</h2><h3>(There are a lot of emails.)</h3></div>
+    let loading = this.state.done_loading ? '' : <div id="loading-indicator"><h2>Loading...</h2><h3>(There are <i>a lot</i> of emails)</h3></div>
     let info = !this.state.show_info ? '' : this.getInfo()
     let mark = !this.state.show_info ? '?' : "x"
     return<div>

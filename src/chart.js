@@ -22,7 +22,7 @@ function chart(data, el){
 
   var radius_scale = d3.scale.linear()
   .domain(d3.extent(data, function(d) { return d[3].length}))
-  .range([5, 30])
+  .range([3, 25])
 
   let extent = d3.extent(data, function(d) { return d[2]})
   extent = [extent[0], 0, extent[1]]

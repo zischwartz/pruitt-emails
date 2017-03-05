@@ -3,6 +3,10 @@ html, body {
   margin: 0px;
   font-family: sans-serif;
 }
+a {
+  color: rgb(160,160, 255);
+}
+
 div#root {
   overflow: hidden;
   width: 100vw;
@@ -58,8 +62,10 @@ div#info{
 }
 
 #info #info-content {
-  padding: 15px;
+  padding: 0px 15px;
   margin-right: 25px;
+  max-width: 400px;
+  line-height: 140%;
 }
 
 
@@ -69,11 +75,11 @@ div#info{
   color: rgb(230,230,230);
   background-color: rgb(80,80,80);
   left: 0;
-   right: 0;
-   margin-left: auto;
-   margin-right: auto;
-  /*right: auto;*/
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
   width: 500px;
+  max-width: 80%;
   text-align: center;
   padding: 10px;
   border-radius:10px;
