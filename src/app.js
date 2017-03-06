@@ -1,7 +1,8 @@
 import React from 'react'
 
 import chart from './chart.js'
-const email_data_url = require("file-loader!../email_plot_data_3.json")
+const email_data_url = require("file-loader!../work/email_plot_data_2.json")
+// const email_data_url = require("file-loader!../work/email_plot_data_3.json")
 import d3 from "d3"
 
 

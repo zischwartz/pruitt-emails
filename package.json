@@ -7,7 +7,7 @@
     "build": "webpack",
     "build:prod": "NODE_ENV=production webpack -p",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "jupyter": "docker run -it -v $(pwd):/home/jovyan/work --rm -p 8888:8888 zischwartz/datascience-notebook-gensim",
+    "jupyter": "docker run -it -v $(pwd)/work:/home/jovyan/work --rm -p 8888:8888 zischwartz/datascience-notebook-gensim",
     "docker-build": "docker build zischwartz/datascience-notebook-gensim .",
     "deploy-gh-pages": "git subtree push --prefix dist origin gh-pages"
   },

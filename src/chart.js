@@ -5,10 +5,10 @@ function chart(data, el){
   .attr("class", "tooltip")
   .style("opacity", 0)
 
-  let email_lines  = data.email_lines
+  let split_emails  = data.split_emails
   data = data.X_embedded
   data.forEach(function(d, i) {
-    d.push( email_lines[i].replace(/\n+/g, '<br>') )
+    d.push( split_emails[i].replace(/\n+/g, '<br>') )
   });
   // console.log(data)
 
@@ -20,9 +20,9 @@ function chart(data, el){
   var x = d3.scale.linear().range([0, width])
   var y = d3.scale.linear().range([height, 0])
 
-  var radius_scale = d3.scale.linear()
-  .domain(d3.extent(data, function(d) { return d[3].length}))
-  .range([3, 25])
+  // var radius_scale = d3.scale.linear()
+  // .domain(d3.extent(data, function(d) { return d[3].length}))
+  // .range([3, 10])
 
   let extent = d3.extent(data, function(d) { return d[2]})
   extent = [extent[0], 0, extent[1]]
@@ -56,10 +56,12 @@ function chart(data, el){
   dots.enter().append("circle")
   .attr("class", "dot")
   .style("fill-opacity", 0)
-  .attr("r", function(d){return radius_scale(d[3].length)})
+  // .attr("r", function(d){return radius_scale(d[3].length)})
+  .attr("r", 4)
   .attr("cx", function(d) { return x(d[0]); })
   .attr("cy", function(d) { return y(d[1]); })
-  .style("fill", function(d) { return color(d[2]); })
+  .style("fill", "rgb(50,50,200)")
+  // .style("fill", function(d) { return color(d[2]); })
 
   dots.transition().duration(250)
     .delay(function(d, i) { return i/2 })
@@ -70,7 +72,8 @@ function chart(data, el){
       div.transition()
       .duration(200)
       .style("opacity", .8);
-      div.html(d[3])
+      // div.html(d[3])
+      div.html(d[2])
       let div_el = div[0][0]
       let div_w = div_el ? div_el.clientWidth : 0
       div.style("left", (d3.event.pageX-(div_w/2)) + "px")
