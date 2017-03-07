@@ -13,7 +13,7 @@ function chart(data, el){
   // console.log(data)
 
 
-  var margin = {top: 20, right: 20, bottom: 30, left: 140},
+  var margin = {top: 20, right: 20, bottom: 30, left: 40},
       width = window.innerWidth - margin.left - margin.right,
       height = window.innerHeight - margin.top - margin.bottom;
 
@@ -24,11 +24,11 @@ function chart(data, el){
   // .domain(d3.extent(data, function(d) { return d[3].length}))
   // .range([3, 10])
 
-  let extent = d3.extent(data, function(d) { return d[2]})
-  extent = [extent[0], 0, extent[1]]
-  var color = d3.scale.linear()
-  .domain(extent)
-  .range(["blue", "yellow", "red"])
+  // let extent = d3.extent(data, function(d) { return d[2]})
+  // extent = [extent[0], 0, extent[1]]
+  // var color = d3.scale.linear()
+  // .domain(extent)
+  // .range(["blue", "yellow", "red"])
 
 
   // var svg = d3.select("body").append("svg")
@@ -57,7 +57,7 @@ function chart(data, el){
   .attr("class", "dot")
   .style("fill-opacity", 0)
   // .attr("r", function(d){return radius_scale(d[3].length)})
-  .attr("r", 4)
+  .attr("r", 5)
   .attr("cx", function(d) { return x(d[0]); })
   .attr("cy", function(d) { return y(d[1]); })
   .style("fill", "rgb(50,50,200)")
@@ -65,8 +65,9 @@ function chart(data, el){
 
   dots.transition().duration(250)
     .delay(function(d, i) { return i/2 })
-    .style("fill-opacity", 0.7)
+    .style("fill-opacity", 0.5)
 
+  // do hover stuff
   dots.on("mouseover", function(d) {
       d3.select(this).classed('active', true)
       div.transition()
